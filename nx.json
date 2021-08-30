@@ -14,12 +14,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "ZDFhMzBmMDAtMzRjMS00ZmVkLWE1MTgtOTQ2N2QyZTMzNjE1fHJlYWQtd3JpdGU="
       }
     }
@@ -39,14 +34,27 @@
     "api-interfaces": {
       "tags": []
     },
+    "core-data": {
+      "tags": []
+    },
+    "core-state": {
+      "tags": []
+    },
     "dashboard": {
       "tags": []
     },
     "dashboard-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "dashboard"
-      ]
+      "implicitDependencies": ["dashboard"]
+    },
+    "material": {
+      "tags": []
+    },
+    "theme": {
+      "tags": []
+    },
+    "ui-library": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-50" layout="row" layout-align="center center">
+    <tools-weapons-list
+      [weapons]="weapons$ | async"
+      (selected)="selectWeapon($event)"
+      (deleted)="deleteWeapon($event)"
+    ></tools-weapons-list>
+  </div>
+  <div class="col-50" layout="row" layout-align="center center">
+    <tools-weapon-details
+      [form]="form"
+      [weapon]="selectedWeapon$ | async"
+      (saved)="saveWeapon($event)"
+      (cancelled)="cancel()"
+    ></tools-weapon-details>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title *ngIf="currentWeapon.id; else createNewWeapon">
+      {{ originalName }}
+    </mat-card-title>
+    <ng-template #createNewWeapon>
+      <h1>Create a New Weapon</h1>
+    </ng-template>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="saveForm(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Name"
+          formControlName="name"
+          type="text"
+          name="name"
+        />
+        <mat-error *ngIf="form.get('name')">Required Field</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Type</mat-label>
+        <input
+          matInput
+          placeholder="Type"
+          formControlName="type"
+          type="text"
+          name="type"
+        />
+        <mat-error *ngIf="form.get('type')">Required Field</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          placeholder="Description"
+          formControlName="description"
+          type="text"
+          name="description"
+        />
+        <mat-error *ngIf="form.get('description')">Required Field</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Famously-Weilded-By</mat-label>
+        <input
+          matInput
+          placeholder="Famously-Weilded-By"
+          formControlName="famousUse"
+          type="text"
+          name="famousUse"
+        />
+        <mat-error *ngIf="form.get('famousUse')">Required Field</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline" floatlabel>
+        <mat-label>Kill-Range</mat-label>
+        <input
+          matInput
+          placeholder="Kill-Range"
+          formControlName="effectiveRange"
+          type="text"
+          name="effectiveRange"
+        />
+        <mat-error *ngIf="form.get('effectiveRange')">Required Field</mat-error>
+      </mat-form-field>
+      <section>
+        <mat-checkbox
+          formControlName="decomissioned"
+          placeholder="Decomissioned"
+          >Decomissioned</mat-checkbox
+        >
+      </section>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button [disabled]="form.invalid">
+        {{ currentWeapon.id ? 'Update' : 'Create' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@tools/api-interfaces';
 
 @Component({
   selector: 'tools-root',
@@ -8,6 +6,9 @@ import { Message } from '@tools/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title = 'Tools-Application';
+  links = [
+    { path: '/', icon: 'home', title: 'Login' },
+    { path: 'weapons', icon: 'view_list', title: 'Weapons-List' },
+  ];
 }

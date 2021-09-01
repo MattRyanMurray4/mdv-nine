@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title *ngIf="currentWeapon.id; else createNewWeapon">
-      {{ originalName }}
+      <h1>Update {{ originalName }}</h1>
     </mat-card-title>
     <ng-template #createNewWeapon>
       <h1>Create a New Weapon</h1>

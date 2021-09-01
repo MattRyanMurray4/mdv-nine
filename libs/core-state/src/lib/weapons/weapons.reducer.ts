@@ -70,8 +70,8 @@ const _weaponsReducer = createReducer(
     error,
   })),
   on(WeaponsActions.selectWeapon, (state, { weaponId }) => ({
-    selectedId: weaponId,
     ...state,
+    selectedId: weaponId,
   })),
   on(WeaponsActions.createWeaponSuccess, (state, { weapon }) =>
     weaponsAdapter.addOne(weapon, { ...state, loaded: true })

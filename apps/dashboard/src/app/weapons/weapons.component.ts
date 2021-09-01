@@ -49,6 +49,7 @@ export class WeaponsComponent implements OnInit {
     weapon.id
       ? this.weaponsFacade.updateWeapon(weapon)
       : this.weaponsFacade.createWeapon(weapon);
+    this.reset();
   }
 
   deleteWeapon(weapon: Weapon) {
